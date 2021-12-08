@@ -5,25 +5,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
-public class Framka extends JFrame{
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Framka frame = new Framka("1");
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace(System.err);
-                }
+public class Framka2 extends JFrame{
 
-            }
-        });
-
-
-    }
-
-    public Framka(String title) throws HeadlessException {
+    public Framka2(String title) throws HeadlessException{
         super(title);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,7 +27,24 @@ public class Framka extends JFrame{
         final JPanel kanwa = new Kanwa();
         kanwa.setBounds(10,10,650,360);
 
+ /*     final JLabel[] label = {new JLabel("nic")};
+        label[0].setBounds(10,10,60,15);
+        kanwa.add(label[0]);
 
+        label[0].addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                int key = e.getKeyCode();
+                int keyc = e.getKeyChar();
+                label[0] = new JLabel(String.valueOf(keyc));
+                if(key == 107){
+                    label[0] = new JLabel("koło");
+                }
+            }
+        });
+
+*/
         final JButton btnRunButton = new JButton("Run");
 
         btnRunButton.addMouseListener(new MouseAdapter() {
@@ -81,4 +83,7 @@ public class Framka extends JFrame{
         panel.add(btnCancel);
 
     }
+
 }
+
+
